@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>test</title>
+		<script>
+		function run() {
+			alert("plof");
+			document.getElemntById("lo").hidden = true;
+		}
+		function clicked() {
+			document.getElemntById("yo").hidden = true;
+			document.getElemntById("lo").hidden = false;
+		}
+		function clicked2() {
+			document.getElemntById("yo").hidden = false;
+			document.getElemntById("lo").hidden = true;
+		}
+		</script>
+	</head>
+	<body onload="run()">
+		<h1 id="yo" onclick="clicked()">Hello World !</h1>
+		<h1 id="lo" onclick="clicked2()">Hello World !</h1>
+		<script>
+			alert("Piep");
+			document.getElemntById("yo").innerHTML = "Fuck it ! Ik haat les geven nu.";
+			alert("POP");
+		</script>
+	</body>
+<html>
