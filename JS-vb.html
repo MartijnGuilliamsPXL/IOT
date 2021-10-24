@@ -1,28 +1,24 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>test</title>
-		<script>
-		function run() {
-			alert("plof");
-			document.getElemntById("lo").hidden = true;
-		}
-		function clicked() {
-			document.getElemntById("yo").hidden = true;
-			document.getElemntById("lo").hidden = false;
-		}
-		function clicked2() {
-			document.getElemntById("yo").hidden = false;
-			document.getElemntById("lo").hidden = true;
-		}
-		</script>
-	</head>
-	<body onload="run()">
-		<h1 id="yo" onclick="clicked()">Hello World !</h1>
-		<h1 id="lo" onclick="clicked2()">Hello World !</h1>
-		<script>
-			alert("Piep");
-			document.getElemntById("yo").innerHTML = "Fuck it ! Ik haat les geven nu.";
-			alert("POP");
+	<body>
+		<select id="language" onChange="update()">
+			<option value="en">English</option>
+			<option value="es">Español</option>
+			<option value="pt">Português</option>
+		</select>
+		<input type="text" id="value">
+		<input type="text" id="text">
+
+		<script type="text/javascript">
+			function update() {
+				var select = document.getElementById('language');
+				var option = select.options[select.selectedIndex];
+
+				document.getElementById('value').value = option.value;
+				document.getElementById('text').value = option.text;
+			}
+
+			update();
 		</script>
 	</body>
-<html>
+</html>
