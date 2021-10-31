@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>AJAX Test</title>
+        <script> 
+		function lada() {
+			if (this.readyState == 4 && this.status == 200){
+				console/log("lada !");
+				document.getElementById("here").innerHTML += this.responseText;
+			}
+        }
+		function ajax() {
+			console/log("test");
+			Frits = new XMLHttpRequest();
+			Frits.onreadystatechange = lada;
+			Frits.open("GET", "https://student.pxl-ea-ict.be//example.php");
+			document.getElementById("here").innerHTML = "FEEST";
+			Frits.send();
+			return true;
+        }
+        </script>
+    </head>
+    <body>
+        <button onclick="ajax()">klik !</button>
+        <p id="here">...</p>
+    </body>
+</html>
