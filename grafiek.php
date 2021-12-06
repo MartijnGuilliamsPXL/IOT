@@ -34,7 +34,6 @@ mysqli_close($conn);
 <html>
 <head>
 <script>
-
 window.onload = function() {
     var dataPoints = [];
 
@@ -91,12 +90,13 @@ window.onload = function() {
         e.chart.render();
     }
 }
-
 </script>
 </head>
+
 <body>
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 </body>
+
 </html>
