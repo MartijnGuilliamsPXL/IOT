@@ -1,0 +1,47 @@
+Collecting data (3/20)	-	DONE
+	+At least one standalone embedded device (i.e. PSoC) with minimal 2 sensors that use different collection logic : action triggered and on interval(e.g. temperature value every 5 min and light status on detection on/off)
+		Alternatively, you can create a software emulator to mimic the hardware, but runs 24/7
+	+You collect the data via http transfer (i.e. you use a PHP collector page)
+		+Request.php
+	+You have collected at least 1 week of usefull data and stored in a future-proof MySQL table with timestamp (i.e. at least timestamp, value and sensorID)
+		+Useful data
+		+Future-proof MySQL table
+	+You store and update the last known sensor information for each sensor in another MySQL table (i.e. ID, name, last known timestamp and external IP)
+		+Where stored
+	+You can manually add data by using a web form that calls the collector page
+		+Request.php
+
+
+Displaying data (6/20)	-	DONE
+	+Display all the collected data correct on a single web graph (i.e. every sensor information stream) and the possibility to toggle the plots
+		+Grafiek.php
+	+-Possibility to filter the graph to zoom in on certain periods (e.g. last 24h)
+		+Grafiek.php
+		+Zooming works
+		+-Button last 24h of data
+			-First have to toggle one of the lines
+	+Display the collected data on a dynamic self-generated table with PHP and add AJAX functionality to filter the data on specific sensor, period of time and/or values (i.e. use a web form for filter and send the data via AJAX)
+		+Self-generated table
+		+Filter data on sensor
+		+Filter on period
+		+Table
+		+Change waardelijst.php filename
+	+Generate an RSS feed with PHP with the latest sensor data statistics (i.e. latest values with timestamp, 24 hours average, minimum and maximum value)
+		+RSS-Feed.php
+		+iframe in HTML
+	+Show that you used JSON somewhere from the MySQL data, or provide a simple API with the proper documentation for external data sharing
+		+Bestand + Regel	(grafiek.php, regel 74)
+
+Professional code (3/20)-	DONE
+	-Readme with flow chart/overview on GitHub using MarkDown
+		+Tekst
+		-Flow Chart
+	+Integrating external services (i.e. using external online REST API)
+		+OpenWeather in RSS feed
+		+Key:6ecd1e7d9194daf803e101447789c618
+
+
+Exploring new technologies (8/20)
+	+-Using a Node.js framework and/or derivatives (e.g. react.js, electron) and build out a very good IoT project
+		+CanvasJS
+	-Implementing alternative modern web techniques, but discuss early what you are planning to do, so I can give you a headsup about the grading

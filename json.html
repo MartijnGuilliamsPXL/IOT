@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="nl">
+<meta charset="UTF-8">
+<title>IoT</title>
+
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    li {
+        float: left;
+        border-right:1px solid #bbb;
+    }
+
+    li:last-child {
+        border-right: none;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #111;
+    }
+
+    .active {
+        background-color: #04AA6D;
+    }
+
+    body{
+        margin:0;
+    }
+</style>
+
+<html>
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+
+
+  <body style=background-color:grey;>
+
+    <nav>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/form.html">Add Data</a></li>
+        <li><a class="active" href="/json.html">JSON</a></li>
+      </ul>
+    </nav>
+    <div id="jsondata"></div>
+    
+  </body>
+  <script>
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("jsondata").innerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", "Json.php");
+      xhttp.send();
+  </script>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nl">
+<meta charset="UTF-8">
+<title>IoT</title>
+
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 5px;
+  }
+  ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  }
+
+  li {
+    float: left;
+    border-right:1px solid #bbb;
+  }
+
+  li:last-child {
+    border-right: none;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+
+  .active {
+    background-color: #04AA6D;
+  }
+
+  body{
+    margin:0;
+  }
+
+  #content{
+    margin: auto;
+    width: 80%;
+  }
+</style>
+
+<html>
+
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+
+
+  <body style=background-color:grey;>
+
+    <nav>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a class="active" href="#form">Add Data</a></li>
+        <li><a href="/json.html">JSON</a></li>
+      </ul>
+    </nav>
+    <br>
+    <br>
+    <br>
+
+    <div id="content">
+      <form action="http://www.student.pxl-ea-ict.be/11901231/request.php" method="GET">
+        <div>
+          <label for="id">id</label>
+          <input style=background-color:lightgrey; name="id" id="id">
+        </div>
+        <div>
+          <label for="waarde">waarde</label>
+          <input style=background-color:lightgrey; name="waarde" id="waarde">
+        </div>
+        <div>
+          <button style=background-color:lightgrey;>Verstuur</button>
+        </div>
+      </form>
+    </div>
+  </body>
+
+</html>
